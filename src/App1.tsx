@@ -114,15 +114,15 @@ const reviewData: Review[] = [
 type InquiryType = "General" | "Private Dining" | "Chef Hearth" | " Press & Catering";
 
 const previewItems: GalleryItem[] = [
-  { id: "1", type: "award", tag: "Accolade", title: "Michelin Guide 2025", subtitle: "Best Culinary Experience Award", image: "/images/gallery1.png" },
-  { id: "2", type: "celebrity", tag: "Social Highlight", title: "Chef Marcu Sterling", subtitle: "Food Critic & TV Host", quote: "'The grilled herb chicken at DineFlow is quite simply an unmatched standard of flavor balance.'", authorHandle: "@marcus_tastes", image: "/images/gallery2.png" },
-  { id: "3", type: "moment", tag: "Milestone", title: "10th Anniversary Gala", subtitle: "Celebrating 100,000+ satisfied guests", image: "/images/gallery3.png" }
+  { id: "1", type: "award", tag: "Accolade", title: "Michelin Guide 2025", subtitle: "Best Culinary Experience Award", image: "/gallery1.png" },
+  { id: "2", type: "celebrity", tag: "Social Highlight", title: "Chef Marcu Sterling", subtitle: "Food Critic & TV Host", quote: "'The grilled herb chicken at DineFlow is quite simply an unmatched standard of flavor balance.'", authorHandle: "@marcus_tastes", image: "/gallery2.png" },
+  { id: "3", type: "moment", tag: "Milestone", title: "10th Anniversary Gala", subtitle: "Celebrating 100,000+ satisfied guests", image: "/gallery3.png" }
 ];
 
 const signatureDishes: MenuItem[] = [
-  { id: "1", name: "Charred Herb Roasted Chicken", tagline: "House Signature & Hearth-Cooked", description: "Slow-Charred Chicken breast marinated in wild rosemary, thyme, and garlic butter. Served over roasted seasonal vegetables and blistered vine tomatoes.", badge: "Chef's Choice", dietary: ['Gluten-Free', 'High Protien'], image: "/images/menuItem1.png" },
-  { id: "2", name: "Pan-Seared Atlantic Salmon", tagline: "Wild-Caught & Citrus-Glazed", description: "Crisp skin filet rested on a bed of creamy saffron risotto, sauteed baby asparagus, and finished with a zesty preserved lemon-caper reduction.", badge: "Guest Favorite", dietary: ['Pescatarian', 'Omega-3 Rich'], image: "/images/menuItem2.png" },
-  { id: "3", name: "Prime Truffle Tenderloin Medallions", tagline: "Dry-Aged 45 Days", description: "Cast-iron seared tenderloin cut served alongside potato mousseline, charred king oyester mushrooms, and an aromatic black truffle jus reduction", badge: "Signatures Cut", dietary: ['Signature Red Meat'], image: "/images/menuItem3.png" },
+  { id: "1", name: "Charred Herb Roasted Chicken", tagline: "House Signature & Hearth-Cooked", description: "Slow-Charred Chicken breast marinated in wild rosemary, thyme, and garlic butter. Served over roasted seasonal vegetables and blistered vine tomatoes.", badge: "Chef's Choice", dietary: ['Gluten-Free', 'High Protien'], image: "/menuItem1.png" },
+  { id: "2", name: "Pan-Seared Atlantic Salmon", tagline: "Wild-Caught & Citrus-Glazed", description: "Crisp skin filet rested on a bed of creamy saffron risotto, sauteed baby asparagus, and finished with a zesty preserved lemon-caper reduction.", badge: "Guest Favorite", dietary: ['Pescatarian', 'Omega-3 Rich'], image: "/menuItem2.png" },
+  { id: "3", name: "Prime Truffle Tenderloin Medallions", tagline: "Dry-Aged 45 Days", description: "Cast-iron seared tenderloin cut served alongside potato mousseline, charred king oyester mushrooms, and an aromatic black truffle jus reduction", badge: "Signatures Cut", dietary: ['Signature Red Meat'], image: "/menuItem3.png" },
 ];
 
 export default function App1() {
@@ -515,11 +515,11 @@ export default function App1() {
             <div className="lg:col-span-6 relative">
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 <div className="relative w-10/12 h-105 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                  <img src="/images/about1.png" alt="DineFlow warm dining room ambiance" className="absolute inset-0 w-full h-full object-cover" />
+                  <img src="/about1.png" alt="DineFlow warm dining room ambiance" className="absolute inset-0 w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-transparent" />
                 </div>
                 <div className="absolute -bottom-8 -right-2 sm:-right-4 w-7/12 h-64 sm:h-72 rounded-2xl overflow-hidden border-4 border-[#121110] shadow-2xl">
-                  <img src="/images/about2.png" alt="Executive chef garnishing signature dish" className="w-full h-full object-cover" />
+                  <img src="/about2.png" alt="Executive chef garnishing signature dish" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute top-6 -left-3 sm:-left-6 bg-zinc-900/90 backdrop-blur-md border border-[#f5a623]/30 px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3">
                   <div className="p-2.5 rounded-xl bg-[#f5a623]/10 text-[#f5a623]">
