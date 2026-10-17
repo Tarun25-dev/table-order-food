@@ -24,7 +24,7 @@ export interface OrderPayload {
 
 // Authentication
 export const loginAdmin = async (credentials: { email?: string; username?: string; password: string }) => {
-  const response = await fetch(${BASE_URL}/api/auth/login, {
+  const response = await fetch(`${BASE_URL}/api/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(credentials),
@@ -39,7 +39,7 @@ export const loginAdmin = async (credentials: { email?: string; username?: strin
 
 // Orders
 export const CreateOrder = async (orderData: OrderPayload) => {
-  const response = await fetch(${BASE_URL}/api/orders, {
+  const response = await fetch(`${BASE_URL}/api/orders`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(orderData),
@@ -53,14 +53,14 @@ export const CreateOrder = async (orderData: OrderPayload) => {
 
 
 export const fetchOrders = async () => {
-  const response = await fetch(${BASE_URL}/api/orders/active);
+  const response = await fetch(`${BASE_URL}/api/orders/active`);
   if (!response.ok) throw new Error("Failed to fetch orders");
   return response.json();
 };
 
 
 export const updateOrderStatus = async (orderId: string, status: string) => {
-  const response = await fetch(${BASE_URL}/api/orders/${orderId}/status, {
+  const response = await fetch(`${BASE_URL}/api/orders/${orderId}/status`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ status }),
@@ -72,18 +72,18 @@ export const updateOrderStatus = async (orderId: string, status: string) => {
 
 // Menu
 export const fetchMenuItems = async () => {
-  const response = await fetch(${BASE_URL}/api/menu);
+  const response = await fetch(`${BASE_URL}/api/menu`);
   if (!response.ok) throw new Error("Failed to fetch menu catalog");
   return response.json();
 };
 
 
 export const createMenuItem = async (token: string, itemData: any) => {
-  const response = await fetch(${BASE_URL}/api/menu, {
+  const response = await fetch(`${BASE_URL}/api/menu`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: Bearer ${token},
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(itemData),
   });
@@ -96,11 +96,11 @@ export const createMenuItem = async (token: string, itemData: any) => {
 
 
 export const updateMenuItem = async (token: string, id: string, itemData: any) => {
-  const response = await fetch(${BASE_URL}/api/menu/${id}, {
+  const response = await fetch(`${BASE_URL}/api/menu/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      Authorization: Bearer ${token},
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(itemData),
   });
@@ -117,7 +117,7 @@ export const requestServiceCall = async (
   tableNumber: number,
   reason: string = "General Waiter Service"
 ) => {
-  const response = await fetch(${BASE_URL}/api/service-call, {
+  const response = await fetch(`${BASE_URL}/api/service-call`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ tableNumber, reason }),
@@ -129,8 +129,8 @@ export const requestServiceCall = async (
 
 // Staff Management
 export const fetchStaffList = async (token: string) => {
-  const response = await fetch(${BASE_URL}/api/staff, {
-    headers: { Authorization: Bearer ${token} },
+  const response = await fetch(`${BASE_URL}/api/staff`, {
+    headers: { Authorization: `Bearer ${token}` },
   });
   if (!response.ok) throw new Error("Failed to fetch staff list");
   return response.json();
@@ -138,11 +138,11 @@ export const fetchStaffList = async (token: string) => {
 
 
 export const createStaffMember = async (token: string, staffData: any) => {
-  const response = await fetch(${BASE_URL}/api/staff, {
+  const response = await fetch(`${BASE_URL}/api/staff`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: Bearer ${token},
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(staffData),
   });
@@ -155,9 +155,9 @@ export const createStaffMember = async (token: string, staffData: any) => {
 
 
 export const toggleStaffStatus = async (token: string, staffId: string) => {
-  const response = await fetch(${BASE_URL}/api/staff/${staffId}/toggle, {
+  const response = await fetch(`${BASE_URL}/api/staff/${staffId}/toggle`, {
     method: "PATCH",
-    headers: { Authorization: Bearer ${token} },
+    headers: { Authorization: `Bearer ${token}` },
   });
   if (!response.ok) throw new Error("Failed to toggle staff status");
   return response.json();
