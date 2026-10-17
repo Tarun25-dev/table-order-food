@@ -1,4 +1,6 @@
-const BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+const rawUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+const BASE_URL = rawUrl.replace(/\/+$/, "");
+
 
 export interface OrderPayload {
   tableNumber: string;
@@ -19,8 +21,25 @@ export interface OrderPayload {
   specialNotes?: string;
 }
 
+
+// Authentication
+export const loginAdmin = async (credentials: { email?: string; username?: string; password: string }) => {
+  const response = await fetch(${BASE_URL}/api/auth/login, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(credentials),
+  });
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.error || errorData.message || "Failed to authenticate");
+  }
+  return response.json();
+};
+
+
+// Orders
 export const CreateOrder = async (orderData: OrderPayload) => {
-  const response = await fetch(`${BASE_URL}/api/orders`, {
+  const response = await fetch(${BASE_URL}/api/orders, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(orderData),
@@ -32,20 +51,16 @@ export const CreateOrder = async (orderData: OrderPayload) => {
   return response.json();
 };
 
+
 export const fetchOrders = async () => {
-  const response = await fetch(`${BASE_URL}/api/orders/active`);
+  const response = await fetch(${BASE_URL}/api/orders/active);
   if (!response.ok) throw new Error("Failed to fetch orders");
   return response.json();
 };
 
-export const fetchMenuItems = async () => {
-  const response = await fetch(`${BASE_URL}/api/menu`);
-  if (!response.ok) throw new Error("Failed to fetch menu catalog");
-  return response.json();
-};
 
 export const updateOrderStatus = async (orderId: string, status: string) => {
-  const response = await fetch(`${BASE_URL}/api/orders/${orderId}/status`, {
+  const response = await fetch(${BASE_URL}/api/orders/${orderId}/status, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ status }),
@@ -54,11 +69,55 @@ export const updateOrderStatus = async (orderId: string, status: string) => {
   return response.json();
 };
 
+
+// Menu
+export const fetchMenuItems = async () => {
+  const response = await fetch(${BASE_URL}/api/menu);
+  if (!response.ok) throw new Error("Failed to fetch menu catalog");
+  return response.json();
+};
+
+
+export const createMenuItem = async (token: string, itemData: any) => {
+  const response = await fetch(${BASE_URL}/api/menu, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: Bearer ${token},
+    },
+    body: JSON.stringify(itemData),
+  });
+  if (!response.ok) {
+    const err = await response.json();
+    throw new Error(err.error || "Failed to create menu item");
+  }
+  return response.json();
+};
+
+
+export const updateMenuItem = async (token: string, id: string, itemData: any) => {
+  const response = await fetch(${BASE_URL}/api/menu/${id}, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: Bearer ${token},
+    },
+    body: JSON.stringify(itemData),
+  });
+  if (!response.ok) {
+    const err = await response.json();
+    throw new Error(err.error || "Failed to update menu item");
+  }
+  return response.json();
+};
+
+
+// Service Calls
 export const requestServiceCall = async (
   tableNumber: number,
   reason: string = "General Waiter Service"
 ) => {
-  const response = await fetch(`${BASE_URL}/api/service-call`, {
+  const response = await fetch(${BASE_URL}/api/service-call, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ tableNumber, reason }),
@@ -67,20 +126,23 @@ export const requestServiceCall = async (
   return response.json();
 };
 
+
+// Staff Management
 export const fetchStaffList = async (token: string) => {
-  const response = await fetch(`${BASE_URL}/api/staff`, {
-    headers: { Authorization: `Bearer ${token}` },
+  const response = await fetch(${BASE_URL}/api/staff, {
+    headers: { Authorization: Bearer ${token} },
   });
   if (!response.ok) throw new Error("Failed to fetch staff list");
   return response.json();
 };
 
+
 export const createStaffMember = async (token: string, staffData: any) => {
-  const response = await fetch(`${BASE_URL}/api/staff`, {
+  const response = await fetch(${BASE_URL}/api/staff, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: Bearer ${token},
     },
     body: JSON.stringify(staffData),
   });
@@ -91,43 +153,12 @@ export const createStaffMember = async (token: string, staffData: any) => {
   return response.json();
 };
 
+
 export const toggleStaffStatus = async (token: string, staffId: string) => {
-  const response = await fetch(`${BASE_URL}/api/staff/${staffId}/toggle`, {
+  const response = await fetch(${BASE_URL}/api/staff/${staffId}/toggle, {
     method: "PATCH",
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: Bearer ${token} },
   });
   if (!response.ok) throw new Error("Failed to toggle staff status");
-  return response.json();
-};
-
-export const createMenuItem = async (token: string, itemData: any) => {
-  const response = await fetch(`${BASE_URL}/api/menu`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    },
-    body: JSON.stringify(itemData)
-  });
-  if (!response.ok) {
-    const err = await response.json();
-    throw new Error(err.error || "Failed to create menu item");
-  }
-  return response.json();
-};
-
-export const updateMenuItem = async (token: string, id: string, itemData: any) => {
-  const response = await fetch(`${BASE_URL}/api/menu/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    },
-    body: JSON.stringify(itemData)
-  });
-  if (!response.ok) {
-    const err = await response.json();
-    throw new Error(err.error || "Failed to update menu item");
-  }
   return response.json();
 };
