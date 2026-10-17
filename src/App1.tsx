@@ -357,7 +357,7 @@ export default function App1() {
   return (
     <div>
       <section id="home" className="relative bg-[#F5F1E8] w-full font-sans overflow-hidden min-h-145 bg-no-repeat flex flex-col justify-between text-white lg:min-h-screen bg-cover bg-center">
-        <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: "url('/images/Main1.png')" }}>
+        <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: "url('/Main1.png')" }}>
           <div className="absolute inset-0 bg-linear-to-r from-black/75 via-black/40 to-transparent"></div>
         </div>
         <header className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-12 py-8 flex items-center justify-between">
