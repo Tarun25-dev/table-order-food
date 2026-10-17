@@ -32,7 +32,6 @@ import {
 import { useEffect, useRef, useState } from "react";
 import jsQR from "jsqr";
 import { useNavigate } from "react-router";
-import Main1 from "/images/Main1.png";
 import DineFlowMenu from "./components/Menu";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
