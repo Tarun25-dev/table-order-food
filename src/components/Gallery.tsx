@@ -23,7 +23,7 @@ const galleryData: GalleryItem[] = [
     title: 'Michelin Guide 2025 Plaque',
     subtitle: 'Culinary Distinction of Excellence',
     date: 'October 2025',
-    image: '/images/Gallery/g1.png',
+    image: '/Gallery/g1.png',
     description: 'Awarded for our commitment to sustainable sourcing, precision wood-fired techniques, and harmonious menu composition.'
   },
   {
@@ -32,7 +32,7 @@ const galleryData: GalleryItem[] = [
     title: 'Chef Marcus Sterling Visit',
     subtitle: 'Culinary Critic & TV Host',
     date: 'August 2025',
-    image: 'images/Gallery/g2.png',
+    image: '/Gallery/g2.png',
     quote: 'The grilled herb chicken at DineFlow is quite simply an unmatched standard of flavor balance.',
     author: '@marcus_tastes',
     description: 'A wonderful evening hosting Chef Marcus in our open hearth kitchen during his international culinary tour.'
@@ -43,7 +43,7 @@ const galleryData: GalleryItem[] = [
     title: '10th Anniversary Gala',
     subtitle: 'A Decade of Unforgettable Nights',
     date: 'May 2025',
-    image: 'images/Gallery/g3.png',
+    image: '/Gallery/g3.png',
     description: 'Celebrating over 100,000 guests served, surrounded by regular patrons, culinary mentors, and our dedicated kitchen brigade.'
   },
   {
@@ -52,7 +52,7 @@ const galleryData: GalleryItem[] = [
     title: 'Hearth Wood-Fire Station',
     subtitle: 'Artisanal Oak & Charcoal Fire',
     date: 'Ongoing Tradition',
-    image: 'images/Gallery/g4.png',
+    image: '/Gallery/g4.png',
     description: 'Our custom-built open stone hearth where every poultry cut and dry-aged steak meets fragrant applewood smoke.'
   },
   {
@@ -61,7 +61,7 @@ const galleryData: GalleryItem[] = [
     title: 'Elena Rostova Dining Experience',
     subtitle: 'Acclaimed Film Director',
     date: 'December 2025',
-    image: 'images/Gallery/g5.png',
+    image: '/Gallery/g5.png',
     quote: 'An oasis of calm and supreme culinary precision. The black truffle jus was pure cinema.',
     author: '@elena_cinema',
     description: 'Private candlelit booth reservation following her festival premiere.'
@@ -72,7 +72,7 @@ const galleryData: GalleryItem[] = [
     title: 'Wine Spectator Best of Award',
     subtitle: 'Excellence in Sommelier Selection',
     date: 'July 2025',
-    image: 'images/Gallery/g6.png',
+    image: '/Gallery/g6.png',
     description: 'Recognizing our cellar containing over 450 natural and biodynamic regional vintages.'
   },
   {
@@ -81,7 +81,7 @@ const galleryData: GalleryItem[] = [
     title: 'Morning Farm Harvest Delivery',
     subtitle: 'Zero-Mile Organic Produce',
     date: 'Daily Ritual',
-    image: 'images/Gallery/g7.png',
+    image: '/Gallery/g7.png',
     description: 'Unboxing wild rosemary, heirloom carrots, and field greens hand-harvested just hours before table service.'
   },
   {
@@ -90,7 +90,7 @@ const galleryData: GalleryItem[] = [
     title: 'Chef Alexander’s Masterclass',
     subtitle: 'Mentoring the Next Generation',
     date: 'January 2026',
-    image: 'images/Gallery/g8.png',
+    image: '/Gallery/g8.png',
     description: 'Annual charity kitchen session opening our line to ambitious culinary academy graduates.'
   }
 ];
