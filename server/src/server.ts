@@ -7,6 +7,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dns from 'node:dns';
 
+
 dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 const app = express();
