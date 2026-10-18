@@ -4,5 +4,4 @@ DineFlow is a full-stack, responsive web application designed for modern dining 
 
 ## 📺 Project Demo
 > [Watch DineFlow Demonstration (MP4)](https://drive.google.com/file/d/1tEfdHqvbfP6uj39V0qVmUNkkz5Of9ilz/view?usp=sharing)
-
-## ![Uploading RecordingOnAirGIF.gif…]()
+> [Watch DineFlow Live](https://table-order-food.vercel.app/)
