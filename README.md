@@ -22,3 +22,11 @@ DineFlow is a full-stack, responsive web application designed for modern dining 
 - **Catalog & Inventory Control:** Real-time updates to menu item pricing, descriptions, and stock statuses.
 
 ---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React (TypeScript), Tailwind CSS, Lucide Icons, Vite
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB Atlas via Mongoose ODM
+- **Real-Time Communication:** Socket.io
+- **Deployment:** Vercel (Frontend), Cloud Web Service (Backend)
