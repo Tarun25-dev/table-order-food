@@ -10,3 +10,15 @@ DineFlow is a full-stack, responsive web application designed for modern dining 
 > [Watch DineFlow Live](https://table-order-food.vercel.app/)
 
 ---
+
+## ✨ Features
+### 📱 Customer Facing
+- **Digital Interactive Menu:** Categorized food and beverage listings with real-time availability and dynamic pricing.
+- **Table-Specific Ordering:** Clean cart and checkout workflow tied to customer table identifiers.
+- **Service & Assistance Calls:** Instant call-staff and bill-request alerts dispatched to the floor team.
+### 🛡️ Administrative & Kitchen Dashboard
+- **Live Order Management:** Real-time incoming order tracking, kitchen status dispatching, and settlement workflows.
+- **Session-Based Authentication:** Protected administrative routes powered by JWT tokens.
+- **Catalog & Inventory Control:** Real-time updates to menu item pricing, descriptions, and stock statuses.
+
+---
