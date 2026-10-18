@@ -139,3 +139,5 @@ To ensure strict data privacy and prevent unauthorized access to administrative 
   Apply rate limiting across sensitive endpoints (`/api/auth/*`, `/api/orders`) to mitigate credential stuffing and denial-of-service abuse.
 
 ---
+
+<p align="right">Thank you for checking out DineFlow! 🍽️</p>
