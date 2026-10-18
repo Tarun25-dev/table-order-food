@@ -75,3 +75,14 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 ```
 
+### 2. Frontend (`.env` in Root)
+Create a `.env` file in the project root:
+
+```env
+VITE_BACKEND_URL=https://your-backend-service-url.com
+```
+*(For local development, set `VITE_BACKEND_URL=http://localhost:4000`)*
+
+---
+
+
