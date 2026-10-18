@@ -115,3 +115,27 @@ npm run dev
 The client application will start at `http://localhost:5173`.
 
 ---
+
+## 🛡️ Future Enhancements
+
+To ensure strict data privacy and prevent unauthorized access to administrative controls, the following access-control mechanisms and security measures are planned for upcoming versions:
+
+- **Client-Side Protected Route Guards:**  
+  Prevent direct URL traversal (e.g., manually entering `/admin/dashboard` into the browser address bar) by introducing a React Router `ProtectedRoute` wrapper that validates authentication tokens prior to component rendering.
+
+- **Server-Side Token Verification on Mount:**  
+  Validate the integrity of session tokens against the backend via a dedicated `/api/auth/verify` endpoint on dashboard load, automatically purging expired or counterfeit local storage tokens.
+
+- **Dynamic / Obfuscated Admin Entry Slugs:**  
+  Support configurable, non-standard administrative entry URLs (e.g., `/portal-df-admin/[secret-hash]`) to protect against automated web crawlers and brute-force bot discovery targeting standard endpoints like `/admin`.
+
+- **Cryptographically Signed Table Sessions (QR Security):**  
+  Bind table ordering interfaces to time-limited or cryptographically signed session tokens (e.g., `/order?table=4&key=token_hash`) to ensure orders can only originate from physical, on-premise diners rather than unauthorized remote submissions.
+
+- **Role-Based Access Control (RBAC):**  
+  Enforce granular permission tiers distinguishing staff access (order status toggling, service call acknowledgments) from administrative privileges (staff provisioning, pricing overrides, catalog alterations).
+
+- **API Rate Limiting:**  
+  Apply rate limiting across sensitive endpoints (`/api/auth/*`, `/api/orders`) to mitigate credential stuffing and denial-of-service abuse.
+
+---
