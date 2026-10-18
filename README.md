@@ -30,3 +30,48 @@ DineFlow is a full-stack, responsive web application designed for modern dining 
 - **Database:** MongoDB Atlas via Mongoose ODM
 - **Real-Time Communication:** Socket.io
 - **Deployment:** Vercel (Frontend), Cloud Web Service (Backend)
+
+---
+
+## 📁 Repository Structure
+
+```text
+table-order-food/
+├── public/                 # Static assets (menu images, brand logos, background art)
+├── server/                 # Express backend application
+│   ├── src/
+│   │   ├── config/         # Database and third-party configurations
+│   │   ├── controllers/    # Request handlers
+│   │   ├── models/         # Mongoose schemas & data models
+│   │   ├── routes/         # Express API route endpoints
+│   │   └── server.ts       # Main server entry file
+│   ├── .env                # Backend environment configuration
+│   └── package.json
+├── src/                    # React frontend application
+│   ├── components/         # Reusable UI components & route guards
+│   ├── context/            # React context providers (Auth, Cart, UI)
+│   ├── pages/              # Routed views (Home, Menu, Admin Login, Dashboard)
+│   ├── services/           # API and HTTP client abstractions
+│   ├── types/              # Shared TypeScript interfaces & types
+│   ├── App.tsx             # Route declarations
+│   └── main.tsx            # Frontend bootstrap entry point
+├── .gitignore
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+```
+
+---
+
+## ⚙️ Environment Variables Setup
+
+### 1. Backend (`server/.env`)
+Create a `.env` file directly inside the `server/` directory:
+
+```env
+PORT=4000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+```
+
