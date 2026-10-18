@@ -85,4 +85,33 @@ VITE_BACKEND_URL=https://your-backend-service-url.com
 
 ---
 
+## 🚀 Getting Started Locally
 
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+- MongoDB Atlas cluster or local MongoDB instance
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/Tarun25-dev/table-order-food.git
+cd table-order-food
+```
+
+### 2. Backend Setup
+```bash
+cd server
+npm install
+npm run dev
+```
+The backend server will start on `http://localhost:4000`.
+
+### 3. Frontend Setup
+Open a new terminal window in the root directory:
+```bash
+npm install
+npm run dev
+```
+The client application will start at `http://localhost:5173`.
+
+---
