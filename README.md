@@ -1,2 +1,2 @@
-<h1 align="center">🍴 DineFlow — Modern Restaurant Management & Table Ordering System</h1>
+<h2 align="center">🍴 DineFlow — Modern Restaurant Management & Table Ordering System</h2>
 
